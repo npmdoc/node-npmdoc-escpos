@@ -1,0 +1,2348 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/song940/node-escpos#readme"
+
+    >escpos (v2.4.0)</a>
+</h1>
+<h4>ESC/POS Printer driver for nodejs</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos">module escpos</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter">
+            function <span class="apidocSignatureSpan">escpos.</span>adapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.console">
+            function <span class="apidocSignatureSpan">escpos.</span>console
+            <span class="apidocSignatureSpan">(handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.image">
+            function <span class="apidocSignatureSpan">escpos.</span>image
+            <span class="apidocSignatureSpan">(pixels)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network">
+            function <span class="apidocSignatureSpan">escpos.</span>network
+            <span class="apidocSignatureSpan">(address, port)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer">
+            function <span class="apidocSignatureSpan">escpos.</span>printer
+            <span class="apidocSignatureSpan">(adapter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial">
+            function <span class="apidocSignatureSpan">escpos.</span>serial
+            <span class="apidocSignatureSpan">(port, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>adapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>console.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>image.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>network.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>printer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">escpos.</span>serial.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.adapter">module escpos.adapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.adapter">
+            function <span class="apidocSignatureSpan">escpos.</span>adapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.extends">
+            function <span class="apidocSignatureSpan">escpos.adapter.</span>extends
+            <span class="apidocSignatureSpan">(ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.super_">
+            function <span class="apidocSignatureSpan">escpos.adapter.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.adapter.prototype">module escpos.adapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.prototype.close">
+            function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.prototype.open">
+            function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.adapter.prototype.write">
+            function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.console">module escpos.console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.console.console">
+            function <span class="apidocSignatureSpan">escpos.</span>console
+            <span class="apidocSignatureSpan">(handler)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.console.prototype">module escpos.console.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.console.prototype.open">
+            function <span class="apidocSignatureSpan">escpos.console.prototype.</span>open
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.console.prototype.write">
+            function <span class="apidocSignatureSpan">escpos.console.prototype.</span>write
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.image">module escpos.image</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.image.image">
+            function <span class="apidocSignatureSpan">escpos.</span>image
+            <span class="apidocSignatureSpan">(pixels)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.image.load">
+            function <span class="apidocSignatureSpan">escpos.image.</span>load
+            <span class="apidocSignatureSpan">(url, type, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.image.prototype">module escpos.image.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.image.prototype.toBitmap">
+            function <span class="apidocSignatureSpan">escpos.image.prototype.</span>toBitmap
+            <span class="apidocSignatureSpan">(density)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.image.prototype.toRaster">
+            function <span class="apidocSignatureSpan">escpos.image.prototype.</span>toRaster
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.network">module escpos.network</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network.network">
+            function <span class="apidocSignatureSpan">escpos.</span>network
+            <span class="apidocSignatureSpan">(address, port)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network.super_">
+            function <span class="apidocSignatureSpan">escpos.network.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.network.prototype">module escpos.network.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network.prototype.close">
+            function <span class="apidocSignatureSpan">escpos.network.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network.prototype.open">
+            function <span class="apidocSignatureSpan">escpos.network.prototype.</span>open
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.network.prototype.write">
+            function <span class="apidocSignatureSpan">escpos.network.prototype.</span>write
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.printer">module escpos.printer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.printer">
+            function <span class="apidocSignatureSpan">escpos.</span>printer
+            <span class="apidocSignatureSpan">(adapter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.super_">
+            function <span class="apidocSignatureSpan">escpos.printer.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.printer.prototype">module escpos.printer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.align">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>align
+            <span class="apidocSignatureSpan">(align)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.barcode">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>barcode
+            <span class="apidocSignatureSpan">(code, type, width, height, position, font)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.cashdraw">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>cashdraw
+            <span class="apidocSignatureSpan">(pin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.close">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.control">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>control
+            <span class="apidocSignatureSpan">(ctrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.cut">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>cut
+            <span class="apidocSignatureSpan">(part, feed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.feed">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>feed
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.flush">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>flush
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.font">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>font
+            <span class="apidocSignatureSpan">(family)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.hardware">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>hardware
+            <span class="apidocSignatureSpan">(hw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.image">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>image
+            <span class="apidocSignatureSpan">(image, density)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.lineSpace">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>lineSpace
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.marginBottom">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginBottom
+            <span class="apidocSignatureSpan">(size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.marginLeft">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginLeft
+            <span class="apidocSignatureSpan">(size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.marginRight">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginRight
+            <span class="apidocSignatureSpan">(size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.print">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>print
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.println">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>println
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.qrcode">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>qrcode
+            <span class="apidocSignatureSpan">(code, version, level, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.qrimage">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>qrimage
+            <span class="apidocSignatureSpan">(content, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.raster">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>raster
+            <span class="apidocSignatureSpan">(image, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.size">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>size
+            <span class="apidocSignatureSpan">(width, height)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.style">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>style
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.printer.prototype.text">
+            function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>text
+            <span class="apidocSignatureSpan">(content, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.serial">module escpos.serial</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial.serial">
+            function <span class="apidocSignatureSpan">escpos.</span>serial
+            <span class="apidocSignatureSpan">(port, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial.super_">
+            function <span class="apidocSignatureSpan">escpos.serial.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.escpos.serial.prototype">module escpos.serial.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial.prototype.close">
+            function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial.prototype.open">
+            function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>open
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.escpos.serial.prototype.write">
+            function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>write
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos" id="apidoc.module.escpos">module escpos</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter" id="apidoc.element.escpos.adapter">
+        function <span class="apidocSignatureSpan">escpos.</span>adapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter(){
+  EventEmitter.call(this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.console" id="apidoc.element.escpos.console">
+        function <span class="apidocSignatureSpan">escpos.</span>console
+        <span class="apidocSignatureSpan">(handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Console(handler){
+  this.handler = handler || stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.image" id="apidoc.element.escpos.image">
+        function <span class="apidocSignatureSpan">escpos.</span>image
+        <span class="apidocSignatureSpan">(pixels)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Image(pixels){
+  if(!(this instanceof Image))
+    return new Image(pixels);
+  this.pixels = pixels;
+
+  this.data = [];
+  function rgb(pixel) {
+    return {
+      r: pixel[0],
+      g: pixel[1],
+      b: pixel[2],
+      a: pixel[3]
+    };
+  };
+
+  var self = this;
+  for(var i=0;i&#x3c;this.pixels.data.length;i+=this.size.colors){
+    this.data.push(rgb(new Array(this.size.colors).fill(0).map(function(_, b){
+      return self.pixels.data[ i + b ];
+    })));
+  };
+
+  this.data = this.data.map(function(pixel){
+    if(pixel.a == 0) return 0;
+    return pixel.r !== 0xFF || pixel.g !== 0xFF || pixel.b !== 0xFF ? 1 : 0;
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network" id="apidoc.element.escpos.network">
+        function <span class="apidocSignatureSpan">escpos.</span>network
+        <span class="apidocSignatureSpan">(address, port)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Network(address, port){
+  EventEmitter.call(this);
+  this.address = address;
+  this.port = port || 9100;
+  this.device = new net.Socket();
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer" id="apidoc.element.escpos.printer">
+        function <span class="apidocSignatureSpan">escpos.</span>printer
+        <span class="apidocSignatureSpan">(adapter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Printer(adapter){
+  if (!(this instanceof Printer)) {
+    return new Printer(adapter);
+  }
+  var self = this;
+  EventEmitter.call(this);
+  this.adapter = adapter;
+  this.buffer = new Buffer();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial" id="apidoc.element.escpos.serial">
+        function <span class="apidocSignatureSpan">escpos.</span>serial
+        <span class="apidocSignatureSpan">(port, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Serial(port, options){
+  var self = this;
+  options = options || {
+    baudrate: 9600,
+    autoOpen: false
+  };
+  this.device = new SerialPort(port, options);
+  this.device.on(&#x27;close&#x27;, function() {
+    self.emit(&#x27;disconnect&#x27;, self.device);
+    self.device = null;
+  });
+  EventEmitter.call(this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.adapter" id="apidoc.module.escpos.adapter">module escpos.adapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.adapter" id="apidoc.element.escpos.adapter.adapter">
+        function <span class="apidocSignatureSpan">escpos.</span>adapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter(){
+  EventEmitter.call(this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.extends" id="apidoc.element.escpos.adapter.extends">
+        function <span class="apidocSignatureSpan">escpos.adapter.</span>extends
+        <span class="apidocSignatureSpan">(ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extends = function (ctor){
+  // console.log(ctor);
+  util.inherits(ctor, Adapter);
+  return ctor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.super_" id="apidoc.element.escpos.adapter.super_">
+        function <span class="apidocSignatureSpan">escpos.adapter.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.adapter.prototype" id="apidoc.module.escpos.adapter.prototype">module escpos.adapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.prototype.close" id="apidoc.element.escpos.adapter.prototype.close">
+        function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  throw new Error(&#x27;NotImplementedException&#x27;);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.<span class="apidocCodeKeywordSpan">close</span>();
+  });
+
+});
+
+
+````
+----
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.prototype.open" id="apidoc.element.escpos.adapter.prototype.open">
+        function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function () {
+  throw new Error(&#x27;NotImplementedException&#x27;);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Select the adapter based on your printer type
+const device  = new escpos.USB();
+// const device  = new escpos.Network(&#x27;localhost&#x27;);
+// const device  = new escpos.Serial(&#x27;/dev/usb/lp0&#x27;);
+
+const printer = new escpos.Printer(device);
+
+device.<span class="apidocCodeKeywordSpan">open</span>(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.adapter.prototype.write" id="apidoc.element.escpos.adapter.prototype.write">
+        function <span class="apidocSignatureSpan">escpos.adapter.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+  throw new Error(&#x27;NotImplementedException&#x27;);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Fix bottom margin
+* @param  {[String]} size
+* @return printer instance
+*/
+Printer.prototype.marginBottom = function(size){
+ this.buffer.<span class="apidocCodeKeywordSpan">write</span>(_.MARGINS.BOTTOM);
+ this.buffer.writeUInt8(size);
+ return this;
+};
+
+/**
+* Fix left margin
+* @param  {[String]} size
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.console" id="apidoc.module.escpos.console">module escpos.console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.console.console" id="apidoc.element.escpos.console.console">
+        function <span class="apidocSignatureSpan">escpos.</span>console
+        <span class="apidocSignatureSpan">(handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Console(handler){
+  this.handler = handler || stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.console.prototype" id="apidoc.module.escpos.console.prototype">module escpos.console.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.console.prototype.open" id="apidoc.element.escpos.console.prototype.open">
+        function <span class="apidocSignatureSpan">escpos.console.prototype.</span>open
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (callback){
+  callback &#x26;&#x26; callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Select the adapter based on your printer type
+const device  = new escpos.USB();
+// const device  = new escpos.Network(&#x27;localhost&#x27;);
+// const device  = new escpos.Serial(&#x27;/dev/usb/lp0&#x27;);
+
+const printer = new escpos.Printer(device);
+
+device.<span class="apidocCodeKeywordSpan">open</span>(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.console.prototype.write" id="apidoc.element.escpos.console.prototype.write">
+        function <span class="apidocSignatureSpan">escpos.console.prototype.</span>write
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data){
+  this.handler &#x26;&#x26; this.handler(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Fix bottom margin
+* @param  {[String]} size
+* @return printer instance
+*/
+Printer.prototype.marginBottom = function(size){
+ this.buffer.<span class="apidocCodeKeywordSpan">write</span>(_.MARGINS.BOTTOM);
+ this.buffer.writeUInt8(size);
+ return this;
+};
+
+/**
+* Fix left margin
+* @param  {[String]} size
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.image" id="apidoc.module.escpos.image">module escpos.image</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.image.image" id="apidoc.element.escpos.image.image">
+        function <span class="apidocSignatureSpan">escpos.</span>image
+        <span class="apidocSignatureSpan">(pixels)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Image(pixels){
+  if(!(this instanceof Image))
+    return new Image(pixels);
+  this.pixels = pixels;
+
+  this.data = [];
+  function rgb(pixel) {
+    return {
+      r: pixel[0],
+      g: pixel[1],
+      b: pixel[2],
+      a: pixel[3]
+    };
+  };
+
+  var self = this;
+  for(var i=0;i&#x3c;this.pixels.data.length;i+=this.size.colors){
+    this.data.push(rgb(new Array(this.size.colors).fill(0).map(function(_, b){
+      return self.pixels.data[ i + b ];
+    })));
+  };
+
+  this.data = this.data.map(function(pixel){
+    if(pixel.a == 0) return 0;
+    return pixel.r !== 0xFF || pixel.g !== 0xFF || pixel.b !== 0xFF ? 1 : 0;
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.image.load" id="apidoc.element.escpos.image.load">
+        function <span class="apidocSignatureSpan">escpos.image.</span>load
+        <span class="apidocSignatureSpan">(url, type, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (url, type, callback){
+  if(typeof type == &#x27;function&#x27;){
+    callback = type;
+    type = null;
+  }
+  getPixels(url, type, function(err, pixels){
+    if(err) return callback(err);
+    callback(new Image(pixels));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.image.prototype" id="apidoc.module.escpos.image.prototype">module escpos.image.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.image.prototype.toBitmap" id="apidoc.element.escpos.image.prototype.toBitmap">
+        function <span class="apidocSignatureSpan">escpos.image.prototype.</span>toBitmap
+        <span class="apidocSignatureSpan">(density)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBitmap = function (density) {
+  density = density || 24;
+
+  var ld, result = [];
+  var x, y, b, l, i;
+  var c = density / 8;
+
+  // n blocks of lines
+  var n = Math.ceil(this.size.height / density);
+
+  for (y = 0; y &#x3c; n; y++) {
+    // line data
+    ld = result[y] = [];
+
+    for (x = 0; x &#x3c; this.size.width; x++) {
+
+      for (b = 0; b &#x3c; density; b++) {
+        i = x * c + (b &#x3e;&#x3e; 3);
+
+        if (ld[i] === undefined) {
+          ld[i] = 0;
+        }
+
+        l = y * density + b;
+        if (l &#x3c; this.size.height) {
+          if (this.data[l * this.size.width + x]) {
+            ld[i] += (0x80 &#x3e;&#x3e; (b &#x26; 0x7));
+          }
+        }
+      }
+    }
+  }
+
+  return {
+    data: result,
+    density: density
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Printer.prototype.image = function(image, density){
+if(!(image instanceof Image))
+  throw new TypeError(&#x27;Only escpos.Image supported&#x27;);
+density = density || &#x27;d24&#x27;;
+var n = !!~[ &#x27;d8&#x27;, &#x27;s8&#x27; ].indexOf(density) ? 1 : 3;
+var header = _.BITMAP_FORMAT[&#x27;BITMAP_&#x27; + density.toUpperCase()];
+var bitmap = image.<span class="apidocCodeKeywordSpan">toBitmap</span>(n * 8);
+var self = this;
+this.lineSpace(0); // set line spacing to 0
+bitmap.data.forEach(function (line) {
+  self.buffer.write(header);
+  self.buffer.writeUInt16LE(line.length / n);
+  self.buffer.write(line);
+  self.buffer.write(_.EOL);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.image.prototype.toRaster" id="apidoc.element.escpos.image.prototype.toRaster">
+        function <span class="apidocSignatureSpan">escpos.image.prototype.</span>toRaster
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toRaster = function () {
+  var result = [];
+  var width  = this.size.width;
+  var height = this.size.height;
+  var data   = this.data;
+
+  // n blocks of lines
+  var n = Math.ceil(width / 8);
+  var x, y, b, c, i;
+
+  for (y = 0; y &#x3c; height; y++) {
+
+    for (x = 0; x &#x3c; n; x++) {
+
+      for (b = 0; b &#x3c; 8; b++) {
+        i = x * 8 + b;
+
+        if (result[y * n + x] === undefined) {
+          result[y * n + x] = 0;
+        }
+
+        c = x * 8 + b;
+        if (c &#x3c; width) {
+          if (data[y * width + i]) {
+            result[y * n + x] += (0x80 &#x3e;&#x3e; (b &#x26; 0x7));
+          }
+        }
+      }
+    }
+  }
+  return {
+    data: result,
+    width: n,
+    height: height
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Printer.prototype.raster = function (image, mode) {
+  if(!(image instanceof Image))
+    throw new TypeError(&#x27;Only escpos.Image supported&#x27;);
+  mode = mode || &#x27;normal&#x27;;
+  if (mode === &#x27;dhdw&#x27; ||
+      mode === &#x27;dwh&#x27;  ||
+      mode === &#x27;dhw&#x27;) mode = &#x27;dwdh&#x27;;
+  var raster = image.<span class="apidocCodeKeywordSpan">toRaster</span>();
+  var header = _.GSV0_FORMAT[&#x27;GSV0_&#x27; + mode.toUpperCase()];
+  this.buffer.write(header);
+  this.buffer.writeUInt16LE(raster.width);
+  this.buffer.writeUInt16LE(raster.height);
+  this.buffer.write(raster.data);
+  return this;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.network" id="apidoc.module.escpos.network">module escpos.network</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network.network" id="apidoc.element.escpos.network.network">
+        function <span class="apidocSignatureSpan">escpos.</span>network
+        <span class="apidocSignatureSpan">(address, port)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Network(address, port){
+  EventEmitter.call(this);
+  this.address = address;
+  this.port = port || 9100;
+  this.device = new net.Socket();
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network.super_" id="apidoc.element.escpos.network.super_">
+        function <span class="apidocSignatureSpan">escpos.network.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.network.prototype" id="apidoc.module.escpos.network.prototype">module escpos.network.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network.prototype.close" id="apidoc.element.escpos.network.prototype.close">
+        function <span class="apidocSignatureSpan">escpos.network.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback){
+  if(this.device){
+    this.device.destroy();
+    this.device = null;
+  }
+  this.emit(&#x27;disconnect&#x27;, this.device);
+  callback &#x26;&#x26; callback(null, this.device);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.<span class="apidocCodeKeywordSpan">close</span>();
+  });
+
+});
+
+
+````
+----
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network.prototype.open" id="apidoc.element.escpos.network.prototype.open">
+        function <span class="apidocSignatureSpan">escpos.network.prototype.</span>open
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (callback){
+  var self = this;
+  //connect to net printer by socket (port,ip)
+  this.device.on(&#x22;error&#x22;, (err) =&#x3e; {
+    callback &#x26;&#x26; callback(err, self.device);
+  }).connect(this.port, this.address, function(err){
+    self.emit(&#x27;connect&#x27;, self.device);
+    callback &#x26;&#x26; callback(err, self.device);
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Select the adapter based on your printer type
+const device  = new escpos.USB();
+// const device  = new escpos.Network(&#x27;localhost&#x27;);
+// const device  = new escpos.Serial(&#x27;/dev/usb/lp0&#x27;);
+
+const printer = new escpos.Printer(device);
+
+device.<span class="apidocCodeKeywordSpan">open</span>(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.network.prototype.write" id="apidoc.element.escpos.network.prototype.write">
+        function <span class="apidocSignatureSpan">escpos.network.prototype.</span>write
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data, callback){
+  this.device.write(data, callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Fix bottom margin
+* @param  {[String]} size
+* @return printer instance
+*/
+Printer.prototype.marginBottom = function(size){
+ this.buffer.<span class="apidocCodeKeywordSpan">write</span>(_.MARGINS.BOTTOM);
+ this.buffer.writeUInt8(size);
+ return this;
+};
+
+/**
+* Fix left margin
+* @param  {[String]} size
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.printer" id="apidoc.module.escpos.printer">module escpos.printer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.printer" id="apidoc.element.escpos.printer.printer">
+        function <span class="apidocSignatureSpan">escpos.</span>printer
+        <span class="apidocSignatureSpan">(adapter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Printer(adapter){
+  if (!(this instanceof Printer)) {
+    return new Printer(adapter);
+  }
+  var self = this;
+  EventEmitter.call(this);
+  this.adapter = adapter;
+  this.buffer = new Buffer();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.super_" id="apidoc.element.escpos.printer.super_">
+        function <span class="apidocSignatureSpan">escpos.printer.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.printer.prototype" id="apidoc.module.escpos.printer.prototype">module escpos.printer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.align" id="apidoc.element.escpos.printer.prototype.align">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>align
+        <span class="apidocSignatureSpan">(align)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">align = function (align){
+  this.buffer.write(_.TEXT_FORMAT[
+    &#x27;TXT_ALIGN_&#x27; + align.toUpperCase()
+  ]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const printer = new escpos.Printer(device);
+
+device.open(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.<span class="apidocCodeKeywordSpan">align</span>(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+.text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+.barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+.qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+  this.cut();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.barcode" id="apidoc.element.escpos.printer.prototype.barcode">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>barcode
+        <span class="apidocSignatureSpan">(code, type, width, height, position, font)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">barcode = function (code, type, width, height, position, font){
+  if(width &#x3e;= 1 || width &#x3c;= 255){
+    this.buffer.write(_.BARCODE_FORMAT.BARCODE_WIDTH);
+  }
+  if(height &#x3e;=2  || height &#x3c;= 6){
+    this.buffer.write(_.BARCODE_FORMAT.BARCODE_HEIGHT);
+  }
+  this.buffer.write(_.BARCODE_FORMAT[
+    &#x27;BARCODE_FONT_&#x27; + (font || &#x27;A&#x27;).toUpperCase()
+  ]);
+  this.buffer.write(_.BARCODE_FORMAT[
+    &#x27;BARCODE_TXT_&#x27; + (position || &#x27;BLW&#x27;).toUpperCase()
+  ]);
+  this.buffer.write(_.BARCODE_FORMAT[
+    &#x27;BARCODE_&#x27; + ((type || &#x27;EAN13&#x27;).replace(&#x27;-&#x27;, &#x27;_&#x27;).toUpperCase())
+  ]);
+  this.buffer.write(code);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  printer
+  .font(&#x27;a&#x27;)
+  .align(&#x27;ct&#x27;)
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .<span class="apidocCodeKeywordSpan">barcode</span>(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.close();
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.cashdraw" id="apidoc.element.escpos.printer.prototype.cashdraw">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>cashdraw
+        <span class="apidocSignatureSpan">(pin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cashdraw = function (pin){
+  this.buffer.write(_.CASH_DRAWER[
+    &#x27;CD_KICK_&#x27; + (pin || 2)
+  ]);
+  return this.flush();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.close" id="apidoc.element.escpos.printer.prototype.close">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback){
+  var self = this;
+  return this.flush(function(){
+    self.adapter.close(callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.<span class="apidocCodeKeywordSpan">close</span>();
+  });
+
+});
+
+
+````
+----
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.control" id="apidoc.element.escpos.printer.prototype.control">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>control
+        <span class="apidocSignatureSpan">(ctrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">control = function (ctrl){
+  this.buffer.write(_.FEED_CONTROL_SEQUENCES[
+    &#x27;CTL_&#x27; + ctrl.toUpperCase()
+  ]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.cut" id="apidoc.element.escpos.printer.prototype.cut">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>cut
+        <span class="apidocSignatureSpan">(part, feed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cut = function (part, feed){
+  this.feed(feed || 3);
+  this.buffer.write(_.PAPER[
+    part ? &#x27;PAPER_PART_CUT&#x27; : &#x27;PAPER_FULL_CUT&#x27;
+  ]);
+  return this.flush();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .align(&#x27;ct&#x27;)
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.<span class="apidocCodeKeywordSpan">cut</span>();
+    this.close();
+  });
+
+});
+
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.feed" id="apidoc.element.escpos.printer.prototype.feed">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>feed
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">feed = function (n) {
+  this.buffer.write(new Array(n || 1).fill(_.EOL).join(&#x27;&#x27;));
+  return this.flush();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * [function Cut paper]
+ * @param  {[type]} part [description]
+ * @return printer instance
+ */
+Printer.prototype.cut = function(part, feed){
+  this.<span class="apidocCodeKeywordSpan">feed</span>(feed || 3);
+  this.buffer.write(_.PAPER[
+    part ? &#x27;PAPER_PART_CUT&#x27; : &#x27;PAPER_FULL_CUT&#x27;
+  ]);
+  return this.flush();
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.flush" id="apidoc.element.escpos.printer.prototype.flush">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>flush
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function (callback){
+  var buf = this.buffer.flush();
+  this.adapter.write(buf, callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Send data to hardware and flush buffer
+* @param  {Function} callback
+* @return printer instance
+*/
+Printer.prototype.flush = function(callback){
+ var buf = this.buffer.<span class="apidocCodeKeywordSpan">flush</span>();
+ this.adapter.write(buf, callback);
+ return this;
+};
+/**
+* [function print]
+* @param  {[String]}  content  [description]
+* @param  {[String]}  encoding [description]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.font" id="apidoc.element.escpos.printer.prototype.font">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>font
+        <span class="apidocSignatureSpan">(family)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">font = function (family){
+  this.buffer.write(_.TEXT_FORMAT[
+    &#x27;TXT_FONT_&#x27; + family.toUpperCase()
+  ]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// const device  = new escpos.Serial(&#x27;/dev/usb/lp0&#x27;);
+
+const printer = new escpos.Printer(device);
+
+device.open(function(){
+
+printer
+.<span class="apidocCodeKeywordSpan">font</span>(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+.text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+.barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+.qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.hardware" id="apidoc.element.escpos.printer.prototype.hardware">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>hardware
+        <span class="apidocSignatureSpan">(hw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hardware = function (hw){
+  this.buffer.write(_.HARDWARE[ &#x27;HW_&#x27;+ hw ]);
+  return this.flush();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.image" id="apidoc.element.escpos.printer.prototype.image">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>image
+        <span class="apidocSignatureSpan">(image, density)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">image = function (image, density){
+  if(!(image instanceof Image))
+    throw new TypeError(&#x27;Only escpos.Image supported&#x27;);
+  density = density || &#x27;d24&#x27;;
+  var n = !!~[ &#x27;d8&#x27;, &#x27;s8&#x27; ].indexOf(density) ? 1 : 3;
+  var header = _.BITMAP_FORMAT[&#x27;BITMAP_&#x27; + density.toUpperCase()];
+  var bitmap = image.toBitmap(n * 8);
+  var self = this;
+  this.lineSpace(0); // set line spacing to 0
+  bitmap.data.forEach(function (line) {
+    self.buffer.write(header);
+    self.buffer.writeUInt16LE(line.length / n);
+    self.buffer.write(line);
+    self.buffer.write(_.EOL);
+  });
+  // restore line spacing to default
+  return this.lineSpace();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.lineSpace" id="apidoc.element.escpos.printer.prototype.lineSpace">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>lineSpace
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lineSpace = function (n) {
+  if (n === undefined || n === null) {
+    this.buffer.write(_.LINE_SPACING.LS_DEFAULT);
+  } else {
+    this.buffer.write(_.LINE_SPACING.LS_SET);
+    this.buffer.writeUInt8(n);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if(!(image instanceof Image))
+  throw new TypeError(&#x27;Only escpos.Image supported&#x27;);
+density = density || &#x27;d24&#x27;;
+var n = !!~[ &#x27;d8&#x27;, &#x27;s8&#x27; ].indexOf(density) ? 1 : 3;
+var header = _.BITMAP_FORMAT[&#x27;BITMAP_&#x27; + density.toUpperCase()];
+var bitmap = image.toBitmap(n * 8);
+var self = this;
+this.<span class="apidocCodeKeywordSpan">lineSpace</span>(0); // set line spacing to 0
+bitmap.data.forEach(function (line) {
+  self.buffer.write(header);
+  self.buffer.writeUInt16LE(line.length / n);
+  self.buffer.write(line);
+  self.buffer.write(_.EOL);
+});
+// restore line spacing to default
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.marginBottom" id="apidoc.element.escpos.printer.prototype.marginBottom">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginBottom
+        <span class="apidocSignatureSpan">(size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">marginBottom = function (size){
+  this.buffer.write(_.MARGINS.BOTTOM);
+  this.buffer.writeUInt8(size);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.marginLeft" id="apidoc.element.escpos.printer.prototype.marginLeft">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginLeft
+        <span class="apidocSignatureSpan">(size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">marginLeft = function (size){
+  this.buffer.write(_.MARGINS.LEFT);
+  this.buffer.writeUInt8(size);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.marginRight" id="apidoc.element.escpos.printer.prototype.marginRight">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>marginRight
+        <span class="apidocSignatureSpan">(size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">marginRight = function (size){
+  this.buffer.write(_.MARGINS.RIGHT);
+  this.buffer.writeUInt8(size);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.print" id="apidoc.element.escpos.printer.prototype.print">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>print
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (content){
+  this.buffer.write(content);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* [function println]
+* @param  {[String]}  content  [description]
+* @param  {[String]}  encoding [description]
+* @return printer instance
+*/
+Printer.prototype.println = function(content){
+ return this.<span class="apidocCodeKeywordSpan">print</span>([ content, _.EOL ].join(&#x27;&#x27;));
+};
+
+/**
+* [function Print alpha-numeric text]
+* @param  {[String]}  content  [description]
+* @param  {[String]}  encoding [description]
+* @return printer instance
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.println" id="apidoc.element.escpos.printer.prototype.println">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>println
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">println = function (content){
+  return this.print([ content, _.EOL ].join(&#x27;&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.qrcode" id="apidoc.element.escpos.printer.prototype.qrcode">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>qrcode
+        <span class="apidocSignatureSpan">(code, version, level, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">qrcode = function (code, version, level, size){
+  this.buffer.write(_.CODE2D_FORMAT.TYPE_QR);
+  this.buffer.write(_.CODE2D_FORMAT.CODE2D);
+  this.buffer.writeUInt8(version || 3);
+  this.buffer.write(_.CODE2D_FORMAT[
+    &#x27;QR_LEVEL_&#x27; + (level || &#x27;L&#x27;).toUpperCase()
+  ]);
+  this.buffer.writeUInt8(size || 6);
+  this.buffer.writeUInt16LE(code.length);
+  this.buffer.write(code);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.qrimage" id="apidoc.element.escpos.printer.prototype.qrimage">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>qrimage
+        <span class="apidocSignatureSpan">(content, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">qrimage = function (content, options, callback){
+  var self = this;
+  if(typeof options == &#x27;function&#x27;){
+    callback = options;
+    options = null;
+  }
+  options = options || { type: &#x27;png&#x27;, mode: &#x27;dhdw&#x27; };
+  var buffer = qr.imageSync(content, options);
+  var type = [ &#x27;image&#x27;, options.type ].join(&#x27;/&#x27;);
+  getPixels(buffer, type, function (err, pixels) {
+    if(err) return callback &#x26;&#x26; callback(err);
+    self.raster(new Image(pixels), options.mode);
+    callback &#x26;&#x26; callback.call(self, null, self);
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .font(&#x27;a&#x27;)
+  .align(&#x27;ct&#x27;)
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .<span class="apidocCodeKeywordSpan">qrimage</span>(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.close();
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.raster" id="apidoc.element.escpos.printer.prototype.raster">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>raster
+        <span class="apidocSignatureSpan">(image, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raster = function (image, mode) {
+  if(!(image instanceof Image))
+    throw new TypeError(&#x27;Only escpos.Image supported&#x27;);
+  mode = mode || &#x27;normal&#x27;;
+  if (mode === &#x27;dhdw&#x27; ||
+      mode === &#x27;dwh&#x27;  ||
+      mode === &#x27;dhw&#x27;) mode = &#x27;dwdh&#x27;;
+  var raster = image.toRaster();
+  var header = _.GSV0_FORMAT[&#x27;GSV0_&#x27; + mode.toUpperCase()];
+  this.buffer.write(header);
+  this.buffer.writeUInt16LE(raster.width);
+  this.buffer.writeUInt16LE(raster.height);
+  this.buffer.write(raster.data);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   options = null;
+ }
+ options = options || { type: &#x27;png&#x27;, mode: &#x27;dhdw&#x27; };
+ var buffer = qr.imageSync(content, options);
+ var type = [ &#x27;image&#x27;, options.type ].join(&#x27;/&#x27;);
+ getPixels(buffer, type, function (err, pixels) {
+   if(err) return callback &#x26;&#x26; callback(err);
+   self.<span class="apidocCodeKeywordSpan">raster</span>(new Image(pixels), options.mode);
+   callback &#x26;&#x26; callback.call(self, null, self);
+ });
+ return this;
+};
+
+/**
+* [image description]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.size" id="apidoc.element.escpos.printer.prototype.size">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>size
+        <span class="apidocSignatureSpan">(width, height)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">size = function (width, height) {
+
+  if (2 &#x3e;= width &#x26;&#x26; 2 &#x3e;= height) {
+
+    this.buffer.write(_.TEXT_FORMAT.TXT_NORMAL);
+
+    if (2 == width &#x26;&#x26; 2 == height) {
+      this.buffer.write(_.TEXT_FORMAT.TXT_4SQUARE);
+    }
+    else if (1 == width &#x26;&#x26; 2 == height) {
+      this.buffer.write(_.TEXT_FORMAT.TXT_2HEIGHT);
+    }
+    else if (2 == width &#x26;&#x26; 1 == height) {
+      this.buffer.write(_.TEXT_FORMAT.TXT_2WIDTH);
+    }
+
+  }
+  else {
+
+    this.buffer.write(_.TEXT_FORMAT.TXT_SIZE);
+    this.buffer.write(_.TEXT_FORMAT.TXT_WIDTH[(8 &#x3e;= width) ? width : 8]);
+    this.buffer.write(_.TEXT_FORMAT.TXT_HEIGHT[(8 &#x3e;= height) ? height : 8]);
+
+  }
+
+  return this;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+device.open(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.<span class="apidocCodeKeywordSpan">size</span>(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+.text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+.barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+.qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+  this.cut();
+  this.close();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.style" id="apidoc.element.escpos.printer.prototype.style">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>style
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">style = function (type){
+  switch(type.toUpperCase()){
+
+    case &#x27;B&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_OFF);
+      break;
+    case &#x27;I&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_OFF);
+      break;
+    case &#x27;U&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_ON);
+      break;
+    case &#x27;U2&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL2_ON);
+      break;
+
+    case &#x27;BI&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_OFF);
+      break;
+    case &#x27;BIU&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_ON);
+      break;
+    case &#x27;BIU2&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL2_ON);
+      break;
+    case &#x27;BU&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_ON);
+      break;
+    case &#x27;BU2&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL2_ON);
+      break;
+    case &#x27;IU&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_ON);
+      break;
+    case &#x27;IU2&#x27;:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_ON);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL2_ON);
+      break;
+
+    case &#x27;NORMAL&#x27;:
+    default:
+      this.buffer.write(_.TEXT_FORMAT.TXT_BOLD_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_ITALIC_OFF);
+      this.buffer.write(_.TEXT_FORMAT.TXT_UNDERL_OFF);
+      break;
+
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const printer = new escpos.Printer(device);
+
+device.open(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.<span class="apidocCodeKeywordSpan">style</span>(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+.text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+.barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+.qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+  this.cut();
+  this.close();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.printer.prototype.text" id="apidoc.element.escpos.printer.prototype.text">
+        function <span class="apidocSignatureSpan">escpos.printer.prototype.</span>text
+        <span class="apidocSignatureSpan">(content, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">text = function (content, encoding){
+  return this.print(iconv.encode(content + _.EOL, encoding || &#x27;GB18030&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+device.open(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.<span class="apidocCodeKeywordSpan">text</span>(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+.text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+.barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+.qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+  this.cut();
+  this.close();
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.serial" id="apidoc.module.escpos.serial">module escpos.serial</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial.serial" id="apidoc.element.escpos.serial.serial">
+        function <span class="apidocSignatureSpan">escpos.</span>serial
+        <span class="apidocSignatureSpan">(port, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Serial(port, options){
+  var self = this;
+  options = options || {
+    baudrate: 9600,
+    autoOpen: false
+  };
+  this.device = new SerialPort(port, options);
+  this.device.on(&#x27;close&#x27;, function() {
+    self.emit(&#x27;disconnect&#x27;, self.device);
+    self.device = null;
+  });
+  EventEmitter.call(this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial.super_" id="apidoc.element.escpos.serial.super_">
+        function <span class="apidocSignatureSpan">escpos.serial.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.escpos.serial.prototype" id="apidoc.module.escpos.serial.prototype">module escpos.serial.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial.prototype.close" id="apidoc.element.escpos.serial.prototype.close">
+        function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  var self = this;
+  this.device.drain(function(err) {
+    self.device.close();
+    self.device = null;
+    callback &#x26;&#x26; callback(err, self.device);
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .style(&#x27;bu&#x27;)
+  .size(1, 1)
+  .text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+  .text(&#x27;敏捷的棕色狐狸跳过懒狗&#x27;)
+  .barcode(&#x27;12345678&#x27;, &#x27;EAN8&#x27;)
+  .qrimage(&#x27;https://github.com/song940/node-escpos&#x27;, function(err){
+    this.cut();
+    this.<span class="apidocCodeKeywordSpan">close</span>();
+  });
+
+});
+
+
+````
+----
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial.prototype.open" id="apidoc.element.escpos.serial.prototype.open">
+        function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>open
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (callback){
+  this.device.open(callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Select the adapter based on your printer type
+const device  = new escpos.USB();
+// const device  = new escpos.Network(&#x27;localhost&#x27;);
+// const device  = new escpos.Serial(&#x27;/dev/usb/lp0&#x27;);
+
+const printer = new escpos.Printer(device);
+
+device.<span class="apidocCodeKeywordSpan">open</span>(function(){
+
+printer
+.font(&#x27;a&#x27;)
+.align(&#x27;ct&#x27;)
+.style(&#x27;bu&#x27;)
+.size(1, 1)
+.text(&#x27;The quick brown fox jumps over the lazy dog&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.escpos.serial.prototype.write" id="apidoc.element.escpos.serial.prototype.write">
+        function <span class="apidocSignatureSpan">escpos.serial.prototype.</span>write
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data, callback){
+  this.device.write(data, callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Fix bottom margin
+* @param  {[String]} size
+* @return printer instance
+*/
+Printer.prototype.marginBottom = function(size){
+ this.buffer.<span class="apidocCodeKeywordSpan">write</span>(_.MARGINS.BOTTOM);
+ this.buffer.writeUInt8(size);
+ return this;
+};
+
+/**
+* Fix left margin
+* @param  {[String]} size
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
